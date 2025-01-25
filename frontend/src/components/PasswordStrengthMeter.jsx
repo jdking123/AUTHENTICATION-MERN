@@ -45,7 +45,7 @@ const PasswordStrengthMeter = ({ password }) => {
 	};
 
 	const getStrengthText = (strength) => {
-		if (strength === 0) return "";
+		if (strength === 0) return "Very Weak";
 		if (strength === 1) return "Weak";
 		if (strength === 2) return "Fair";
 		if (strength === 3) return "Good";
@@ -60,10 +60,12 @@ const PasswordStrengthMeter = ({ password }) => {
 			</div>
 
 			<div className='flex space-x-1'>
-				{[...Array(4)].map(( _,index) => (
+				{[...Array(4)].map((_, index) => (
 					<div
 						key={index}
-						className={`h-1 w-1/4 rounded-full transition-colors duration-300 ${index < strength ? getColor(strength) : "bg-gray-600"}`}
+						className={`h-1 w-1/4 rounded-full transition-colors duration-300 
+                ${index < strength ? getColor(strength) : "bg-gray-600"}
+              `}
 					/>
 				))}
 			</div>

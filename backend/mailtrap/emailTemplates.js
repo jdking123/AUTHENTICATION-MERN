@@ -5,28 +5,93 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Verify Your Email</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      background: linear-gradient(to right, #4CAF50, #45a049);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 5px 5px 0 0;
+    }
+    .content {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 0 0 5px 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .verification-code {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      color: #4CAF50;
+      text-align: center;
+      margin: 30px 0;
+    }
+    .button {
+      display: inline-block;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .button:hover {
+      background: #45a049;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #888;
+      font-size: 0.8em;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      .header, .content {
+        padding: 15px;
+      }
+      .verification-code {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-  <div style="background: linear-gradient(to right, #4CAF50, #45a049); padding: 20px; text-align: center;">
-    <h1 style="color: white; margin: 0;">Verify Your Email</h1>
-  </div>
-  <div style="background-color: #f9f9f9; padding: 20px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-    <p>Hello,</p>
-    <p>Thank you for signing up! Your verification code is:</p>
-    <div style="text-align: center; margin: 30px 0;">
-      <span style="font-size: 32px; font-weight: bold; letter-spacing: 5px; color: #4CAF50;">{verificationCode}</span>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Verify Your Email</h1>
     </div>
-    <p>Enter this code on the verification page to complete your registration.</p>
-    <p>This code will expire in 15 minutes for security reasons.</p>
-    <p>If you didn't create an account with us, please ignore this email.</p>
-    <p>Best regards,<br>Your App Team</p>
-  </div>
-  <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
-    <p>This is an automated message, please do not reply to this email.</p>
+    <div class="content">
+      <p>Hello,</p>
+      <p>Thank you for signing up! Your verification code is:</p>
+      <div class="verification-code">{verificationCode}</div>
+      <p>This code will expire in 15 minutes for security reasons.</p>
+      <p>If you didn't create an account with us, please ignore this email.</p>
+     
+    </div>
+    <div class="footer">
+      <p>This is an automated message, please do not reply to this email.</p>
+    </div>
   </div>
 </body>
 </html>
 `;
+
 
 export const PASSWORD_RESET_SUCCESS_TEMPLATE = `
 <!DOCTYPE html>
@@ -89,6 +154,91 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
   </div>
   <div style="text-align: center; margin-top: 20px; color: #888; font-size: 0.8em;">
     <p>This is an automated message, please do not reply to this email.</p>
+  </div>
+</body>
+</html>
+`;
+
+export const WELCOME_EMAIL_TEMPLATE = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Our Platform</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      background: linear-gradient(to right, #4CAF50, #45a049);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 5px 5px 0 0;
+    }
+    .content {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 0 0 5px 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .welcome-message {
+      font-size: 18px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .button {
+      display: inline-block;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .button:hover {
+      background: #45a049;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #888;
+      font-size: 0.8em;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+      .header, .content {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Welcome to Our Platform!</h1>
+    </div>
+    <div class="content">
+      <p>Hello {name},</p>
+      <p class="welcome-message">We're excited to have you on board. Thank you for joining <strong>{company_info_name}</strong>!</p>
+     
+    </div>
+    <div class="footer">
+      <p>This is an automated message, please do not reply to this email.</p>
+    </div>
   </div>
 </body>
 </html>
